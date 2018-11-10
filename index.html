@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="reset.css">
+  <style>
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    border: 1px solid #000;
+  }
+  ul li {
+    border: 1px solid #000;
+    width: 33%;
+  }
+  /* .w_200{
+    width: 25%;
+  } */
+  .w_200 img {
+    width: 100%;
+    vertical-align: bottom;
+  }
+  /* .w_500{
+    width: 25%;
+  } */
+  .w_500 img {
+    width: 100%;
+    vertical-align: bottom;
+  }
+  .grid_sizer {
+    visibility: visible;
+    width: 33%;
+  }
+  @media (min-width: 1000px) {
+    ul li {
+      border: 1px solid #000;
+      width: 25%;
+    }
+    .grid_sizer {
+      width: 25%;
+    }
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <ul>
+      <div class="grid_sizer"></div>
+      <li class="w_200"><a href="#"><img src="1.png" /></a></li>
+      <li class="w_200"><a href="#"><img src="2.png" /></a></li>
+      <li class="w_500"><a href="#"><img src="3.png" /></a></li>
+      <li class="w_200"><a href="#"><img src="1.png" /></a></li>
+      <li class="w_200"><a href="#"><img src="1.png" /></a></li>
+      <li class="w_200"><a href="#"><img src="2.png" /></a></li>
+      <li class="w_500"><a href="#"><img src="3.png" /></a></li>
+      <li class="w_200"><a href="#"><img src="1.png" /></a></li>
+      <!-- <li><a href="#"><img src="4.png" /></a></li>
+      <li><a href="#"><img src="5.png" /></a></li>
+      <li><a href="#"><img src="6.png" /></a></li>
+      <li><a href="#"><img src="7.png" /></a></li> -->
+    </ul>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
+  <script>
+    window.onload = function(){
+      new Masonry('ul', {
+        itemSelector: 'li',
+        columnWidth: '.grid_sizer',
+      });
+    };
+  </script>
+</body>
+</html>
